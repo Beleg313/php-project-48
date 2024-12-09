@@ -1,0 +1,19 @@
+{
+    "name": "hexlet/code",
+    "bin": [
+    "bin/gendiff"
+    ],
+    "description": "Second project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "require": {
+        "docopt/docopt": "^1.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.10"
+    }
+}
