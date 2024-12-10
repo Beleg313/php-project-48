@@ -12,14 +12,29 @@ Generate diff
 Usage:
   gendiff (-h|--help)
   gendiff (-v|--version)
+  gendiff [--format <fmt>] <firstFile> <secondFile>
 
 Options:
   -h --help                     Show this screen
   -v --version                  Show version
+  --format <fmt>                Report format [default: stylish]
 DOC;
 
-$args = Docopt::handle($doc, ['version' => 'gendiff 1.0.0']);
+$args = Docopt::handle($doc, [
+    'version' => 'gendiff 1.0.0',
+]);
 
 if ($args['--help']) {
     echo $doc . PHP_EOL;
+    exit(0);
 }
+
+if ($args['--version']) {
+    echo "gendiff 1.0.0" . PHP_EOL;
+    exit(0);
+}
+
+// Выводим переданные аргументы для проверки
+echo "First file: " . $args['<firstFile>'] . PHP_EOL;
+echo "Second file: " . $args['<secondFile>'] . PHP_EOL;
+echo "Format: " . $args['--format'] . PHP_EOL;
